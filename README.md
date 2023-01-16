@@ -403,7 +403,7 @@ Representational State Transfer: Estilo de arquitectura que usa peticiones HTTP 
 Usa:
 - Transferencia de datos: HTTP
 - Codificacion de datos: JSON
-- - Pruebas con: PostMAN
+- Pruebas con: PostMAN
 
 
 ## SOAP VS REST
@@ -423,9 +423,45 @@ REST permite manetener facilomente los servicios web debido a que al agregar met
 | Tiene una curva de aprendizaje pronunciada por el conocimiento sobre WSDL  | tiene una curva de aprendizaje corta al trabajar con metodos simples HTTP  |
 | Hace que el serivicio web no sea facil de mantener debido al contrato WSDL  | permite manetener facilomente los servicios web debido a que al agregar metodos no es necesario hacer cambios en el cliente  |
 | Implementación no tan sencilla  | Implementación flexible  |
-| Ofrece mayor seguridad pero mas pesadas  | APIs mas ligeras  |
+| Ofrece mayor seguridad y se ajusta a especificaciones, anque es mas pesada  | APIs mas ligeras  |
 
 
 ***
 
-# TIPOS DE PRUEBAS
+# TIPOS DE PRUEBAS DE SOFTWARE
+
+# Pruebas unitarias
+Son pruebas de muy bajo nivel y se realizan cerca de la fuente de la aplicación. 
+Probar:
+- Métodos
+- Funciones individuales de las clases
+- Componentes
+- Módulos que usa tu software.
+
+# Pruebas de integración
+Son pruebas que verifican que los distintos módulos o servicios utilizados funcionan bien en conjunto. Por ejemplo, se puede probar la interacción con la base de datos o asegurarse de que los microservicios funcionan bien en conjunto y según lo esperado.
+
+# Pruebas funcionales
+Son pruebas que se centran en el resultado de una acción y no comprueban los estados intermedios del sistema al realizar dicha acción.
+
+# Pruebas de extremo a extremo
+Son pruebas integrales que replican el comportamiento de un usuario con el software en un entorno de aplicación completo.
+Verifica: 
+- Diversos flujos de usuario
+- Interaccion
+- Notificaciones: correo electrónico, pagos en línea, etc.
+
+# Pruebas de aceptación
+Son pruebas son formales que verifican si un sistema satisface los requisitos. Requieren que se esté ejecutando toda la aplicación durante las pruebas y se centran en replicar las conductas de los usuarios. Puede tambien medir el rendimiento del sistema.
+
+# Pruebas de rendimiento
+Son pruebas que evalúan el rendimiento de un sistema con una carga de trabajo determinada. Ayudan a medir:
+
+- Fiabilidad
+- La velocidad
+- La escalabilidad
+- La capacidad de respuesta de una aplicación. 
+
+# Pruebas de humo
+Son pruebas básicas que sirven para comprobar el funcionamiento básico de la aplicación. Están concebidas para ejecutarse rápidamente, y su objetivo es ofrecerte la seguridad de que las principales funciones.
+
