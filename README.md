@@ -2,12 +2,14 @@
 
 
 # Paradigmas
-## Imperativo: Se deben dar instrucciones exactas de lo que debe hacer. C#, Java
+## Imperativo: Se deben dar instrucciones exactas de lo que debe hacer. 
+*C#, Java*
   - Procedimental: 
   - Orientado a Objetos: Clases
   - Procesamiento Paralelo
 ## Declarativo: Indicar que se quiere hacer y el resultado que se desea
-  - Logico: Prolog
+*Prolog*
+  - Logico
   - Funcional / Flujo de Datos: Funciones
   - Base de datos
   
