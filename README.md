@@ -102,29 +102,34 @@ Capacidad de implementar las mismas propiedades y métodos heredados a una clase
 ***
 
 # PATRONES DE DISEÑO
-Son una solución general, reutilizable y aplicable a diferentes problemas de diseño de software. Se trata de plantillas que identifican problemas y proporcionan soluciones apropiadas a problemas generales a los que se han enfrentado los desarrolladores. Ls patrones de diseño ayudan a estar seguro de la validez deldigo, ya que son soluciones que funcionan y han sido probados siendo menos propensos a errores.
+Son una solución general, reutilizable y aplicable a diferentes problemas de diseño de software. Se trata de plantillas que identifican problemas y proporcionan soluciones apropiadas a problemas generales a los que se han enfrentado los desarrolladores. 
+
+- Ahorran tiempo en el diseño
+- Ayudan a estar seguro de la validez del codigo
+- Ayuda a tener una metodologia en comun al trabajar en equipo
+- Hace que sean menos propenso a tener errores
 
 ## Tipos de patrones de diseño
 
 ### 1. Patrones creacionales
-Los patrones de creación proporcionan diversos mecanismos de creación de objetos, que aumentan la flexibilidad y la reutilización del código existente de una manera adecuada a la situación. Esto le da al programa más flexibilidad para decidir qué objetos deben crearse para un caso de uso dado.
+Simplifican la creación de objetos, desacoplando la manera de como se crean del resto de la implementación: Encapsulan y ocultan su funcionamiento. Normalmente hace uso de Interfaces. (mas comunes en negrita)
 
-- Abstract Factory
-- Builder Patterns
-- Factory Method
-- Prototype
-- Singleton
+- **Abstract Factory**
+- **Builder Patterns**
+- **Factory Method**
+- **Prototype**
+- **Singleton**
 
 ### 2. Patrones estructurales
-Facilitan soluciones y estándares eficientes con respecto a las composiciones de clase y las estructuras de objetos. El concepto de herencia se utiliza para componer interfaces y definir formas de componer objetos para obtener nuevas funcionalidades.
+Permiten la creación de la estructura especificando la forma en que las clases se relacionan con otras. El concepto de herencia se utiliza para componer interfaces y definir formas de componer objetos para obtener nuevas funcionalidades.
 
-- Adapter
-- Bridge
-- Composite
-- Decorator
-- Facade
-- Flyweight
-- Proxy
+- **Adapter**
+- **Bridge**
+- **Composite**
+- **Decorator**
+- **Facade/Fachada**
+- **Flyweight**
+- **Proxy**
 
 ### 3. Patrones de comportamiento
 El patrón de comportamiento se ocupa de la comunicación entre objetos de clase. Se utilizan para detectar la presencia de patrones de comunicación ya presentes y pueden manipular estos patrones.
@@ -144,62 +149,62 @@ El patrón de comportamiento se ocupa de la comunicación entre objetos de clase
 ## 1. Patrones creacionales
 
 ### Abstract Factory
-En este patrón, una interfaz crea conjuntos o familias de objetos relacionados sin especificar el nombre de la clase.
+Provee una interfaz que delega la creación de un conjunto de objetos con caracteristicas similares sin necesidad de conocer como crealos.
 
 ### Builder Patterns
-Permite producir diferentes tipos y representaciones de un objeto utilizando el mismo código de construcción. Se utiliza para la creación etapa por etapa de un objeto complejo combinando objetos simples. La creación final de objetos depende de las etapas del proceso creativo, pero es independiente de otros objetos.
+Separa el proceso de creación del objeto para poder crear representaciones distintas.
 
 ### Factory Method
-Proporciona una interfaz para crear objetos en una superclase, pero permite que las subclases alteren el tipo de objetos que se crearán. Proporciona instanciación de objetos implícita a través de interfaces comunes
+Similar a *Abstrac Factory* con la diferencia de que provee un metodo que las subclases deben implementar.
 
 ### Prototype
-Permite copiar objetos existentes sin hacer que su código dependa de sus clases. Se utiliza para restringir las operaciones de memoria / base de datos manteniendo la modificación al mínimo utilizando copias de objetos.
+Permite la creación de objetos en plantillas de tal forma que para crear un objeto se clona uno ya existente. Se utiliza para restringir las operaciones de memoria / base de datos manteniendo la modificación al mínimo utilizando copias de objetos.
 
 ### Singleton
-Este patrón de diseño restringe la creación de instancias de una clase a un único objeto. 
+Restringe la creación de instancias a un solo objeto y proporciona acceso global al objeto.
 
 ## 2. Patrones estructurales
 
 ### Adapter
-Se utiliza para vincular dos interfaces que no son compatibles y utilizan sus funcionalidades. El adaptador permite que las clases trabajen juntas de otra manera que no podrían al ser interfaces incompatibles.
+Permite a dos interfaces que no son compatibles comunicarse entre ellas, mediante un objeto intermedio que permite su comunicacion.
 
 ### Bridge
-En este patrón hay una alteración estructural en las clases principales y de implementador de interfaz sin tener ningún efecto entre ellas. Estas dos clases pueden desarrollarse de manera independiente y solo se conectan utilizando una interfaz como puente.
+Desacopla una extracción (interfaz) de su implementación (clase) y permite desarrollar a las clases de manera independiente utilizando una interfaz como puente.
 
 ### Composite
 Se usa para agrupar objetos como un solo objeto. Permite componer objetos en estructuras de árbol y luego trabajar con estas estructuras como si fueran objetos individuales.
 
 ### Decorator
-Este patrón restringe la alteración de la estructura del objeto mientras se le agrega una nueva funcionalidad. La clase inicial permanece inalterada mientras que una clase decorator proporciona capacidades adicionales.
+Permite agrega una nueva funcionalidad extra a un objeto sin necesidad de cambiar el comportamiento de los demas objetos del mismo tipo. La clase inicial permanece inalterada mientras que una clase decorator proporciona capacidades adicionales.
 
-### Facade
-Proporciona una interfaz simplificada para una biblioteca, un marco o cualquier otro conjunto complejo de clases.
+### Facade/Fachada
+Proporciona una interfaz simplificada y solamente dejar acccesible lo que se va a utilizar (ej. libreria externa).
 
 ### Flyweight
-El patrón Flyweight se usa para reducir el uso de memoria y mejorar el rendimiento al reducir la creación de objetos. El patrón busca objetos similares que ya existen para reutilizarlo en lugar de crear otros nuevos que sean similares.
+Permite que una gran cantidad de objetos comparten un unico objeto para realizar una tarea, reduciendo el uso de memoria y mejorar el rendimiento al reducir la creación de objetos. El patrón busca objetos similares que ya existen para reutilizarlo en lugar de crear otros nuevos que sean similares.
 
 ### Proxy
-Se utiliza para crear objetos que pueden representar funciones de otras clases u objetos y la interfaz se utiliza para acceder a estas funcionalidades
+Se utiliza como una interfaz hacia cualquier otra cosa que se encarga de realizar una tarea que puede ser costosa o no duplicable. (ej. conexiona internet, archivo). Utilizada para crear objetos que pueden representar funciones de otras clases u objetos y la interfaz se utiliza para acceder a estas funcionalidades
 
 ## 3. Patrones de comportamiento
 
 ### Chain of responsibility
-El patrón de diseño Chain of Responsibility es un patrón de comportamiento que evita acoplar el emisor de una petición a su receptor dando a más de un objeto la posibilidad de responder a una petición.
+Desacopla el emisor del receptor de tal forma que en una cadena de elementos, cada elemento decide lo proceso o lo delega al siguiente objeto de la cadena.
 
 ### Command
-Convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud. Esta transformación permite parametrizar métodos con diferentes solicitudes, retrasar o poner en cola la ejecución de una solicitud y respaldar operaciones que no se pueden deshacer.
+Encapsula una accion y define los parametros necesarios para ejecutarla.
 
 ### Interpreter
-Se utiliza para evaluar el lenguaje o la expresión al crear una interfaz que indique el contexto para la interpretación.
+Define una repsentación de una gramatica asi como el mecanismo para procesarla. El arbol de sintaxis se suele interpretar mediante el patron composite.
 
 ### Iterator
-Su utilidad es proporcionar acceso secuencial a un número de elementos presentes dentro de un objeto de colección sin realizar ningún intercambio de información relevante.
+Permite iterar a los elementos un objeto de colección sin necesidad de conocer como esta organizo o su estructura.
 
 ### Mediator
-Este patrón proporciona una comunicación fácil a través de su clase que permite la comunicación para varias clases.
+Encapsula como otros objetos se comunican entre ellos, través de su clase que permite la comunicación para varias clases.
 
 ### Memento
-El patrón Memento permite recorrer elementos de una colección sin exponer su representación subyacente.
+Otorna la habilidad a un objeto de volver a un estado anterior.
 
 ### Observer
 Permite definir un mecanismo de suscripción para notificar a varios objetos sobre cualquier evento que le suceda al objeto que está siendo observado.
@@ -208,7 +213,7 @@ Permite definir un mecanismo de suscripción para notificar a varios objetos sob
 En el patrón state, el comportamiento de una clase varía con su estado y, por lo tanto, está representado por el objeto de contexto.
 
 ### Strategy
-Permite definir una familia de algoritmos, poner cada uno de ellos en una clase separada y hacer que sus objetos sean intercambiables.
+Permite seleccionar el comportamiento del objeto en tiempo de ejecución segun factores.
 
 ### Template method
 Se usa con componentes que tienen similitud donde se puede implementar una plantilla del código para probar ambos componentes. El código se puede cambiar con pequeñas modificaciones.
