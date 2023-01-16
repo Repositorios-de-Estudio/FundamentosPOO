@@ -380,9 +380,52 @@ El propósito de un patrón Visitor es definir una nueva operación sin introduc
 *Web Services*
 
 ## ¿Que es Web Service?
+Tecnologia que permite intercambiar datos entre aplicaciones desarrolladas en diferentes lenguajes y plataformas a traves de una red. La petición se hace desde un cliente hacia un Sevidor que ya cuenta con el servicio necesario (API), luego el Servidor retorna una resuesta al Cliente. Existen dos estandar/protocolos: 1) SOAP y 2) REST.
+
 
 ## ¿Que es SOAP?
+Simple Object Acces Protocol: Protocolo con uso de XML para establecer la comunicación sistemas, al estar basado en XML es independiente del lenguaje y plataforma.
+- Es un protocolo para el intercambio de datos.
+- Usa WSDL para exponer los metodos y detalles tecnicos.
+- Los servicios web y sus clientes usan WSD como contrato.
 
+Usa:
+- Transferencia de datos: HTTP
+- Codificacion de datos: XML
+- Pruebas con: SoapUI
 
 ## ¿Que es REST?
-Es un servicio WEB 
+Representational State Transfer: Estilo de arquitectura que usa peticiones HTTP para establecer la comunicacion entre sistemas. Permite el uso de XML, JSON, texto plano, HTML, entre otros.
+- Es una arquitetura que usa HTTP para intercambio de datos
+- Expone los metodos a traves de la URL
+- No existe contrato cliente / servidor
+
+Usa:
+- Transferencia de datos: HTTP
+- Codificacion de datos: JSON
+- - Pruebas con: PostMAN
+
+
+## SOAP VS REST
+SOAP hace que los servicios web esten altamente acoplados con el cliente debido al contrato.
+SOAP soporta unicamente XML para el intercambio de datos
+SOAP tiene una curva de aprendizaje pronunciada por el conocimiento sobre WSDL
+SOAP hace que el serivicio web no sea facil de mantener debido al contrato WSDL
+REST hace que los servicios web sean con bajo acoplamiento
+REST permite el intercambio de datos en otros formatos
+REST tiene una curva de aprendizaje corta al trabajar con metodos simples HTTP
+REST permite manetener facilomente los servicios web debido a que al agregar metodos no es necesario hacer cambios en el cliente
+
+| SOAP  | REST |
+| ------------- | ------------- |
+| Hace que los servicios web esten altamente acoplados con el cliente debido al contrato  | hace que los servicios web sean con bajo acoplamiento  |
+| Soporta unicamente XML para el intercambio de datos  | permite el intercambio de datos en otros formatos****  |
+| Tiene una curva de aprendizaje pronunciada por el conocimiento sobre WSDL  | tiene una curva de aprendizaje corta al trabajar con metodos simples HTTP  |
+| Hace que el serivicio web no sea facil de mantener debido al contrato WSDL  | permite manetener facilomente los servicios web debido a que al agregar metodos no es necesario hacer cambios en el cliente  |
+| Implementación no tan sencilla  | Implementación flexible  |
+| Ofrece mayor seguridad pero mas pesadas  | APIs mas ligeras  |
+
+
+***
+
+# TIPOS DE PRUEBAS
