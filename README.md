@@ -114,22 +114,22 @@ Son una solución general, reutilizable y aplicable a diferentes problemas de di
 ### 1. Patrones creacionales
 Simplifican la creación de objetos, desacoplando la manera de como se crean del resto de la implementación: Encapsulan y ocultan su funcionamiento. Normalmente hace uso de Interfaces. (mas comunes en negrita)
 
-- **Abstract Factory**
-- **Builder Patterns**
-- **Factory Method**
-- **Prototype**
+- Abstract Factory
+- Builder Patterns
+- Factory Method
+- Prototype
 - **Singleton**
 
 ### 2. Patrones estructurales
 Permiten la creación de la estructura especificando la forma en que las clases se relacionan con otras. El concepto de herencia se utiliza para componer interfaces y definir formas de componer objetos para obtener nuevas funcionalidades.
 
 - **Adapter**
-- **Bridge**
-- **Composite**
+- Bridge
+- Composite
 - **Decorator**
-- **Facade/Fachada**
-- **Flyweight**
-- **Proxy**
+- Facade/**
+- Flyweight
+- Proxy
 
 ### 3. Patrones de comportamiento
 El patrón de comportamiento se ocupa de la comunicación entre objetos de clase. Se utilizan para detectar la presencia de patrones de comunicación ya presentes y pueden manipular estos patrones.
@@ -138,7 +138,7 @@ El patrón de comportamiento se ocupa de la comunicación entre objetos de clase
 - Command
 - Interpreter
 - Iterator
-- Mediator
+- **Mediator**
 - Memento
 - Observer
 - State
@@ -162,6 +162,26 @@ Permite la creación de objetos en plantillas de tal forma que para crear un obj
 
 ### Singleton
 Restringe la creación de instancias a un solo objeto y proporciona acceso global al objeto.
+ej: solo hay una BD, si solo tiene API, solo hay una conexion.
+
+```
+public sealed class Singleton
+{
+    private readonly static Singleton _instance = new Singleton();
+ 
+    private Singleton()
+    {
+    }
+ 
+    public static Singleton Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+}
+```
 
 ## 2. Patrones estructurales
 
@@ -175,7 +195,33 @@ Desacopla una extracción (interfaz) de su implementación (clase) y permite des
 Se usa para agrupar objetos como un solo objeto. Permite componer objetos en estructuras de árbol y luego trabajar con estas estructuras como si fueran objetos individuales.
 
 ### Decorator
-Permite agrega una nueva funcionalidad extra a un objeto sin necesidad de cambiar el comportamiento de los demas objetos del mismo tipo. La clase inicial permanece inalterada mientras que una clase decorator proporciona capacidades adicionales.
+Permite agrega una nueva funcionalidad extra a un objeto sin necesidad de cambiar el comportamiento de las demas instancias del mismo tipo. Soluciona el problema de agregar y quitar responsabilidades en tiempo de ejecucion.
+
+```
+public class Cafe 
+ {
+	 public double getCosto(){ return 1;  }
+	 public string getIngredientes(){ return "Cafe"; }
+ }
+ 
+ 
+ public class ConLeche 
+ {
+	 public ConLeche(Cafe cf)
+	 {
+		 this.cf;
+	 }
+	 
+	 public double getCosto(){ return this.cf.getCosto()+1; }
+	 public string getIngredientes(){return this.cf.getIngredientes()+ ", Leche" }
+ }
+ 
+ 
+ Cafe cafe1 = New Cafe();
+ ConLeche conLeche1 = new ConLeche(cafe1);
+ 
+ // Se muestran los ingredientes del cafe y del cafe con leche con las mismas funciones
+```
 
 ### Facade/Fachada
 Proporciona una interfaz simplificada y solamente dejar acccesible lo que se va a utilizar (ej. libreria externa).
