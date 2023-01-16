@@ -121,7 +121,7 @@ Facilitan soluciones y estándares eficientes con respecto a las composiciones d
 - Facade
 - Flyweight
 - Proxy
-- 
+
 ### 3. Patrones de comportamiento
 El patrón de comportamiento se ocupa de la comunicación entre objetos de clase. Se utilizan para detectar la presencia de patrones de comunicación ya presentes y pueden manipular estos patrones.
 
@@ -136,7 +136,6 @@ El patrón de comportamiento se ocupa de la comunicación entre objetos de clase
 - Strategy
 - Template method
 - Visitor
-
 
 ## 1. Patrones creacionales
 
