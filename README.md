@@ -26,7 +26,7 @@ Es un tipo de paradigma de progrmación (estilo) imperativo que se basa en los c
 - Programación Procedimental: Busca reutilizar el codigo ya existente cada que se necesite.
 - Programación Modular: Dividir un programa en modulos o subprogramas para resolver problemas complejos.
 
-##Clase
+## Clase
 Es un modelo o plantilla/prototipo que define métodos (funciones) y atributos (propiedades) de datos de cualquier objeto dado. Los objetos son la instancia de cada clase. Ej: Animal {nombre, raza ... caminar(), comer()}.
 
 ## Objeto
