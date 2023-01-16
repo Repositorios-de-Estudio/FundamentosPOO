@@ -16,6 +16,8 @@
   
 Material de ayuda [Fundamentos C#](https://github.com/Repositorios-de-Estudio/FundamentosCsharp)
 
+***
+
 # Fundamentos Progrmacion Orientada a Objetos
 
 ## ¿Que es POO?
@@ -91,11 +93,13 @@ Capacidad de implementar las mismas propiedades y métodos heredados a una clase
 - Reuso de codigo
 - Se aplica con Interfaces y Herencia
 
+***
 
 # Buenas Practicas
 -  DRY (Dont Repeat Yourself)
 -  SOLID (Single, Open/Closed, Liskov subs, Interface, Dependedi)
 
+***
 
 # PATRONES DE DISEÑO
 Son una solución general, reutilizable y aplicable a diferentes problemas de diseño de software. Se trata de plantillas que identifican problemas y proporcionan soluciones apropiadas a problemas generales a los que se han enfrentado los desarrolladores. Ls patrones de diseño ayudan a estar seguro de la validez deldigo, ya que son soluciones que funcionan y han sido probados siendo menos propensos a errores.
@@ -211,3 +215,5 @@ Se usa con componentes que tienen similitud donde se puede implementar una plant
 
 ### Visitor
 El propósito de un patrón Visitor es definir una nueva operación sin introducir las modificaciones a una estructura de objeto existente.
+
+***
