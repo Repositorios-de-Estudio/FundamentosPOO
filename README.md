@@ -102,36 +102,43 @@ Son una solución general, reutilizable y aplicable a diferentes problemas de di
 
 ## Tipos de patrones de diseño
 
-- Patrones creacionales
-	- Abstract Factory
-	- Builder Patterns
-	- Factory Method
-	- Prototype
-	- Singleton
-- Patrones estructurales
-	- Adapter
-	- Bridge
-	- Composite
-	- Decorator
-	- Facade
-	- Flyweight
-	- Proxy
-- Patrones de comportamiento
-	- Chain of responsibility
-	- Command
-	- Interpreter
-	- Iterator
-	- Mediator
-	- Memento
-	- Observer
-	- State
-	- Strategy
-	- Template method
-	- Visitor
+### Patrones creacionales
+Los patrones de creación proporcionan diversos mecanismos de creación de objetos, que aumentan la flexibilidad y la reutilización del código existente de una manera adecuada a la situación. Esto le da al programa más flexibilidad para decidir qué objetos deben crearse para un caso de uso dado.
+
+- Abstract Factory
+- Builder Patterns
+- Factory Method
+- Prototype
+- Singleton
+
+### Patrones estructurales
+Facilitan soluciones y estándares eficientes con respecto a las composiciones de clase y las estructuras de objetos. El concepto de herencia se utiliza para componer interfaces y definir formas de componer objetos para obtener nuevas funcionalidades.
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+- 
+### Patrones de comportamiento
+El patrón de comportamiento se ocupa de la comunicación entre objetos de clase. Se utilizan para detectar la presencia de patrones de comunicación ya presentes y pueden manipular estos patrones.
+
+- Chain of responsibility
+- Command
+- Interpreter
+- Iterator
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template method
+- Visitor
 
 
 ## Patrones creacionales
-Los patrones de creación proporcionan diversos mecanismos de creación de objetos, que aumentan la flexibilidad y la reutilización del código existente de una manera adecuada a la situación. Esto le da al programa más flexibilidad para decidir qué objetos deben crearse para un caso de uso dado.
 
 ### Abstract Factory
 En este patrón, una interfaz crea conjuntos o familias de objetos relacionados sin especificar el nombre de la clase.
@@ -149,7 +156,6 @@ Permite copiar objetos existentes sin hacer que su código dependa de sus clases
 Este patrón de diseño restringe la creación de instancias de una clase a un único objeto. 
 
 ## Patrones estructurales
-Facilitan soluciones y estándares eficientes con respecto a las composiciones de clase y las estructuras de objetos. El concepto de herencia se utiliza para componer interfaces y definir formas de componer objetos para obtener nuevas funcionalidades.
 
 ### Adapter
 Se utiliza para vincular dos interfaces que no son compatibles y utilizan sus funcionalidades. El adaptador permite que las clases trabajen juntas de otra manera que no podrían al ser interfaces incompatibles.
@@ -173,7 +179,6 @@ El patrón Flyweight se usa para reducir el uso de memoria y mejorar el rendimie
 Se utiliza para crear objetos que pueden representar funciones de otras clases u objetos y la interfaz se utiliza para acceder a estas funcionalidades
 
 ## Patrones de comportamiento
-El patrón de comportamiento se ocupa de la comunicación entre objetos de clase. Se utilizan para detectar la presencia de patrones de comunicación ya presentes y pueden manipular estos patrones.
 
 ### Chain of responsibility
 El patrón de diseño Chain of Responsibility es un patrón de comportamiento que evita acoplar el emisor de una petición a su receptor dando a más de un objeto la posibilidad de responder a una petición.
