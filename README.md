@@ -97,7 +97,12 @@ Capacidad de implementar las mismas propiedades y métodos heredados a una clase
 
 # Buenas Practicas
 -  DRY (Dont Repeat Yourself)
--  SOLID (Single, Open/Closed, Liskov subs, Interface, Dependedi)
+-  SOLID:
+	- S: Responsabilidad unica: Una clase deberia tener solo una responsabilidad.
+	- O: Abierto/Cerrado: Las clases deberían estar abiertas para poder extenderse y cerradas para modificarse.
+	- L: Sustitución de Liskov: Los objetos deben poder ser reemplazados por instancias de sus subtipos sin alterar el correcto funcionamiento del sistema.
+	- I: Segregación de la Interfaz: Crear interfaces específicas o con una finalidad concreta.
+	- D: Inversión de Dependencias: Alcanzar un bajo acoplamiento de las clases. La se debe “depender de abstracciones, no depender de implementaciones”.
 
 ***
 
@@ -130,6 +135,8 @@ Permiten la creación de la estructura especificando la forma en que las clases 
 - Facade/**
 - Flyweight
 - Proxy
+- **MVC**
+- **FLUX**
 
 ### 3. Patrones de comportamiento
 El patrón de comportamiento se ocupa de la comunicación entre objetos de clase. Se utilizan para detectar la presencia de patrones de comunicación ya presentes y pueden manipular estos patrones.
@@ -187,6 +194,43 @@ public sealed class Singleton
 
 ### Adapter
 Permite a dos interfaces que no son compatibles comunicarse entre ellas, mediante un objeto intermedio que permite su comunicacion.
+Es reconocible por un constructor que toma una instancia de distinto tipo de clase abstracta/interfaz. Cuando el adaptador recibe una llamada a uno de sus métodos, convierte los parámetros al formato adecuado y después dirige la llamada a uno o varios métodos del objeto envuelto.
+
+```
+public interface IClase1
+{
+	string GetRequest();
+}
+
+class Clase2
+{
+	public string GetSpecificRequest(){ return "Specific request."; }
+}
+
+// clase adaptador
+class Adapter : IClase1
+{
+	private readonly Clase2 _CL2;
+
+	public Adapter(Clase2 cl2)
+	{
+		this._CL2 = cl2;
+	}
+
+	public string GetRequest() { return this._Clase2.GetSpecificRequest(); }
+}
+
+// uso
+Clase2 obclase2 = new Clase2();
+IClase1 clase1 = new Adapter(obclase2);
+
+Console.WriteLine("Clase2 interface is incompatible with the client.");
+Console.WriteLine("But with adapter client can call it's method.");
+
+Console.WriteLine(clase1.GetRequest());
+
+```
+
 
 ### Bridge
 Desacopla una extracción (interfaz) de su implementación (clase) y permite desarrollar a las clases de manera independiente utilizando una interfaz como puente.
@@ -220,7 +264,7 @@ public class Cafe
  Cafe cafe1 = New Cafe();
  ConLeche conLeche1 = new ConLeche(cafe1);
  
- // Se muestran los ingredientes del cafe y del cafe con leche con las mismas funciones
+ // Se muestran los ingredientes del cafe y del cafe con leche, dependiendo de que se necesite mostrara un precio e ingredientes diferentes
 ```
 
 ### Facade/Fachada
@@ -231,6 +275,27 @@ Permite que una gran cantidad de objetos comparten un unico objeto para realizar
 
 ### Proxy
 Se utiliza como una interfaz hacia cualquier otra cosa que se encarga de realizar una tarea que puede ser costosa o no duplicable. (ej. conexiona internet, archivo). Utilizada para crear objetos que pueden representar funciones de otras clases u objetos y la interfaz se utiliza para acceder a estas funcionalidades
+
+### MVC 
+Comúnmente utilizado para implementar interfaces de usuario, datos y lógica de control. Enfatiza una separación entre la lógica de negocios y su visualización.
+- Modelo: Maneja datos y lógica de negocios.
+- Vista: Se encarga del diseño y presentación.
+- Controlador: Enruta comandos a los modelos y vistas.
+
+EJ: ASP.NET MVC
+
+
+```
+Controller -> controlador, acciones que se muestran en la vista
+Model -> Clases .cs , modelado de los datos
+View -> Vistas -> Controller*View .htmlcs , representacion e interaccion visual con el usuario
+```
+
+### FLUX
+Creado por Facebook para complementar Reacty similar a MVC, es un MVC circular
+1. El usario realiza una acción en la vista
+2. La aplicación se actualiza segun la interacción
+3. La aplicación se renderiza automaticamente para actualizar la vista
 
 ## 3. Patrones de comportamiento
 
@@ -247,7 +312,49 @@ Define una repsentación de una gramatica asi como el mecanismo para procesarla.
 Permite iterar a los elementos un objeto de colección sin necesidad de conocer como esta organizo o su estructura.
 
 ### Mediator
-Encapsula como otros objetos se comunican entre ellos, través de su clase que permite la comunicación para varias clases.
+Encapsula como otros objetos se comunican entre ellos, través de su clase que permite la comunicación para varias clases. Cuando un objeto necesita comunicar algo a otro u otros objetos, no necesita comunicarse con cada objeto. Simplemente, le comunica al mediador algo, y éste, se encarga de enrutar y comunicarse con el resto de objetos.
+- Mantenimiento sencillo
+- Acoplamiento debil
+
+```
+public interface IMediator
+{
+    void RegisterUser(User user);
+}
+
+public class Mediator : IMediator
+{
+    private List<User> _users = new List<User>();
+    
+    public void RegisterUser(User user)
+    {
+        _users.Add(user);
+        Console.WriteLine($"\t{user.GetUserName()} (has joined to the group '{_groupName}'!)");
+    }
+}
+
+public abstract class User
+{
+    protected IMediator Mediator;
+    protected string Name;
+    
+    public User(IMediator mediator, string name)
+    {
+        Mediator = mediator;
+        Name = name;
+    }
+    
+    public string GetUserName() => Name;
+}
+
+IMediator mediator = new Mediator("Patterns for C# Group");
+        
+User jorge = new User(mediator, "Jorge");
+User maria = new User(mediator, "María");
+                       
+mediator.RegisterUser(jorge);  // el mediador se encarga de hacer las operaciones para User
+mediator.RegisterUser(maria);
+```
 
 ### Memento
 Otorna la habilidad a un objeto de volver a un estado anterior.
@@ -268,3 +375,14 @@ Se usa con componentes que tienen similitud donde se puede implementar una plant
 El propósito de un patrón Visitor es definir una nueva operación sin introducir las modificaciones a una estructura de objeto existente.
 
 ***
+
+# SOPA vs REST
+*Web Services*
+
+## ¿Que es Web Service?
+
+## ¿Que es SOAP?
+
+
+## ¿Que es REST?
+Es un servicio WEB 
